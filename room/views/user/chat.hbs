@@ -1,0 +1,42 @@
+
+{{!-- <div style="border: 2px solid white;margin-top: 10px;">
+  {{#each chat}}
+	<div class="blog-card spring-fever">
+  <div class="title-content">
+    <h3><a href="#">{{this.fromId}}</a></h3>
+    <div class="intro">Sent You a Messages <a href="#"></a> </div>
+  </div>
+  <div class="card-info">
+    {{this.msg}}
+  </div>
+  <div class="utility-info">
+  </div>
+  <div class="gradient-overlay"></div>
+  <div class="color-overlay"></div>
+</div><!-- /.blog-card -->
+
+{{/each}} 
+</div>
+</body>
+</html> --}}
+{{> userNav}}
+
+  {{#each chat}}
+<div class="card mb-3" style="width:740px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      {{!-- <img src="..." class="img-fluid rounded-start" alt="..."> --}}
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+  
+        
+           <h5 class="card-title" style="color:black;">{{this.fromId}}</h5>
+        <p class="card-text" style="color:black;">{{this.msg}}</p>
+        
+        {{!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+      </div>
+    </div>
+  </div>
+</div>
+{{/each}}

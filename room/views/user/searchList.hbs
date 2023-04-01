@@ -1,0 +1,58 @@
+{{>userNav}}
+
+<section>
+    <h1>{{user.email}}</h1>
+    <p>“Connect With others.”</p>
+</section>
+
+<div class="content" id="content1">
+
+    <main class="main-content" id="main-content">
+        {{#if data}}
+        {{#each data}}
+        <div class="column-two">
+            <div class="booking-box">
+                <img src="/images/profile/{{this.img}}">
+                <h3>{{this.name}}</h3>
+                <p>{{this.email}}</p>
+                <a href="/" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">message</a>
+            </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <h1 style="margin-top: 100px;">No Search results found !!!</h1>
+        {{/if}}
+
+    </main>
+
+</div>
+
+
+
+{{!-- message --}}
+
+
+
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabe2" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/msg" method="post" enctype="multipart/form-data">
+                    <input type="file" name="img">
+                    <input type="text" name="mail" placeholder="to">
+                    <input type="text" name="msg" placeholder="msg">
+                    <input type="submit" value="Sent">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
